@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 Java Programming Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #0056b3;
+            margin-top: 20px;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-left: 5px solid #0056b3;
+            overflow-x: auto;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Week 2 Java Programming Notes</h1>
+
+    <h2>1. Java Data Types</h2>
+    <ul>
+        <li>Java has two main categories of data types:</li>
+        <ul>
+            <li><strong>Primitive Data Types</strong>: Predefined data types that hold a single value.</li>
+            <li><strong>Non-Primitive (Reference) Data Types</strong>: Variables that can contain references to objects.</li>
+        </ul>
+    </ul>
+
+    <h2>2. Primitive Data Types</h2>
+    <ul>
+        <li>Common primitive data types include:</li>
+        <ul>
+            <li><code>byte</code>: 8-bit integer</li>
+            <li><code>short</code>: 16-bit integer</li>
+            <li><code>int</code>: 32-bit integer</li>
+            <li><code>long</code>: 64-bit integer</li>
+            <li><code>float</code>: 32-bit floating point</li>
+            <li><code>double</code>: 64-bit floating point</li>
+            <li><code>char</code>: Single 16-bit Unicode character</li>
+            <li><code>boolean</code>: true or false</li>
+        </ul>
+    </ul>
+
+    <h2>3. Default Values for Java Data Types</h2>
+    <pre>
+    Data Type       Default Value
+    -------------------------------
+    byte            0
+    short           0
+    int             0
+    long            0L
+    float           0.0f
+    double          0.0d
+    char            '\u0000'
+    String (or any object) null
+    boolean         false
+    </pre>
+
+    <h2>4. Variable Declaration and Initialization</h2>
+    <ul>
+        <li>Example of variable declaration and initialization:</li>
+        <pre>
+        public class VariableExample {
+            public static void main(String[] args) {
+                int month = 2, days = 28;
+                System.out.println("Month " + month + " has " + days + " Days.");
+            }
+        }
+        </pre>
+    </ul>
+
+    <h2>5. Floating Point Data Types</h2>
+    <ul>
+        <li>Java has two floating-point data types:</li>
+        <ul>
+            <li><code>float</code>: Single precision (7 decimal points)</li>
+            <li><code>double</code>: Double precision (15 decimal points)</li>
+        </ul>
+    </ul>
+
+    <h2>6. Example of Floating Point Calculation</h2>
+    <pre>
+    public class Sale {
+        public static void main(String[] args) {
+            double price = 29.75;
+            double tax = 1.76;
+            double total = price + tax;
+            System.out.println("The price of the item is " + price);
+            System.out.println("The tax is " + tax);
+            System.out.println("The total is " + total);
+        }
+    }
+    </pre>
+
+    <h2>7. Arithmetic Operators</h2>
+    <ul>
+        <li>Java has five arithmetic operators:</li>
+        <ul>
+            <li><code>+</code>: Addition</li>
+            <li><code>-</code>: Subtraction</li>
+            <li><code>*</code>: Multiplication</li>
+            <li><code>/</code>: Division</li>
+            <li><code>%</code>: Modulus</li>
+        </ul>
+    </ul>
+
+    <h2>8. Example of Arithmetic Operations</h2>
+    <pre>
+    public class ArithmeticExample {
+        public static void main(String[] args) {
+            double basePay = 25;
+            double regularHours = 40;
+            double overtimePay = 37.5;
+            double overtimeHours = 10;
+
+            double regularWages = basePay * regularHours;
+            double overtimeWages = overtimePay * overtimeHours;
+            double totalWages = regularWages + overtimeWages;
+
+            System.out.println("Wages for this week are $" + totalWages);
+        }
+    }
+    </pre>
+
+    <h2>9. Relational Operators</h2>
+    <ul>
+        <li>Common relational operators include:</li>
+        <ul>
+            <li><code>==</code>: Equal to</li>
+            <li><code>!=</code>: Not equal to</li>
+            <li><code>&gt;</code>: Greater than</li>
+            <li><code>&lt;</code>: Less than</li>
+            <li><code>&gt;=</code>: Greater than or equal to</li>
+            <li><code>&lt;=</code>: Less than or equal to</li>
+        </ul>
+    </ul>
+
+    <h2>10. Logical Operators</h2>
+    <ul>
+        <li>Common logical operators include:</li>
+        <ul>
+            <li><code>&&</code>: Logical AND</li>
+            <li><code>||</code>: Logical OR</li>
+            <li><code>!</code>: Logical NOT</li>
+        </ul>
+    </ul>
+
+    <h2>11. Example of Logical Operations</h2>
+    <pre>
+    public class LogicalExample {
+        public static void main(String[] args) {
+            int a = 5;
+            int b = 10;
+            boolean result = (a < b) && (b > 0);
+            System.out.println("Result of logical operation: " + result);
+        }
+    }
+    </pre>
+
+    <h2>12. Type Casting</h2>
+    <ul>
+        <li>Implicit Casting (Widening): Automatically done by the compiler.</li>
+        <pre>
+        int i = 100;
+        long l = i; // Implicit casting
+        </pre>
+        <li>Explicit Casting (Narrowing): Must be done manually.</li>
+        <pre>
+        double d = 100.04;
+        int i = (int) d; // Explicit casting
+        </pre>
+    </ul>
+
+</body>
+</html>
