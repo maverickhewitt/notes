@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3 Java Programming Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #0056b3;
+            margin-top: 20px;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-left: 5px solid #0056b3;
+            overflow-x: auto;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Week 3 Java Programming Notes</h1>
+
+    <h2>1. Control Structures</h2>
+    <ul>
+        <li>Control structures are used to dictate the flow of execution in a program.</li>
+        <li>Types of control structures:</li>
+        <ul>
+            <li><strong>Selection Structures</strong>: <code>if</code>, <code>if...else</code>, <code>switch</code></li>
+            <li><strong>Repetition Structures</strong>: <code>while</code>, <code>do...while</code>, <code>for</code></li>
+        </ul>
+    </ul>
+
+    <h2>2. Selection Structures</h2>
+    <h3>2.1 If Statements</h3>
+    <pre>
+    if (condition) {
+        // execute statements
+    }
+    </pre>
+
+    <h3>2.2 If-Else Statements</h3>
+    <pre>
+    if (condition) {
+        // execute statements if true
+    } else {
+        // execute statements if false
+    }
+    </pre>
+
+    <h3>2.3 Nested If Statements</h3>
+    <pre>
+    if (condition1) {
+        if (condition2) {
+            // execute statements
+        } else {
+            // execute alternative statements
+        }
+    }
+    </pre>
+
+    <h3>2.4 Switch Statement</h3>
+    <pre>
+    switch (expression) {
+        case value1:
+            // execute statements
+            break;
+        case value2:
+            // execute statements
+            break;
+        default:
+            // execute statements if no case matches
+    }
+    </pre>
+
+    <h2>3. Example of If-Else Statement</h2>
+    <pre>
+    public class GradeCalculator {
+        public static void main(String[] args) {
+            int score = 85;
+            if (score >= 90) {
+                System.out.println("Grade: A");
+            } else if (score >= 80) {
+                System.out.println("Grade: B");
+            } else {
+                System.out.println("Grade: C");
+            }
+        }
+    }
+    </pre>
+
+    <h2>4. Repetition Structures</h2>
+    <h3>4.1 While Loop</h3>
+    <pre>
+    while (condition) {
+        // execute statements
+    }
+    </pre>
+
+    <h3>4.2 Do-While Loop</h3>
+    <pre>
+    do {
+        // execute statements
+    } while (condition);
+    </pre>
+
+    <h3>4.3 For Loop</h3>
+    <pre>
+    for (initialization; condition; update) {
+        // execute statements
+    }
+    </pre>
+
+    <h2>5. Example of While Loop</h2>
+    <pre>
+    public class WhileLoopExample {
+        public static void main(String[] args) {
+            int count = 1;
+            while (count <= 5) {
+                System.out.println("Count: " + count);
+                count++;
+            }
+        }
+    }
+    </pre>
+
+    <h2>6. Example of For Loop</h2>
+    <pre>
+    public class ForLoopExample {
+        public static void main(String[] args) {
+            for (int i = 1; i <= 5; i++) {
+                System.out.println("Iteration: " + i);
+            }
+        }
+    }
+    </pre>
+
+    <h2>7. Break and Continue Statements</h2>
+    <ul>
+        <li><strong>Break Statement</strong>: Exits the loop immediately.</li>
+        <pre>
+        while (condition) {
+            if (someCondition) {
+                break; // exit loop
+            }
+        }
+        </pre>
+        <li><strong>Continue Statement</strong>: Skips the current iteration and continues with the next iteration.</li>
+        <pre>
+        for (int i = 0; i < 10; i++) {
+            if (i % 2 == 0) {
+                continue; // skip even numbers
+            }
+            System.out.println(i);
+        }
+        </pre>
+    </ul>
+
+    <h2>8. Example of Break and Continue</h2>
+    <pre>
+    public class BreakContinueExample {
+        public static void main(String[] args) {
+            for (int i = 1; i <= 10; i++) {
+                if (i == 5) {
+                    break; // exit loop when i is 5
+                }
+                System.out.println(i);
+            }
+
+            for (int i = 1; i <= 10; i++) {
+                if (i % 2 == 0) {
+                    continue; // skip even numbers
+                }
+                System.out.println(i);
+            }
+        }
+    }
+    </pre>
+
+</body>
+</html>
