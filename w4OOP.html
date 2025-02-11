@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4 Java Programming Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #0056b3;
+            margin-top: 20px;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-left: 5px solid #0056b3;
+            overflow-x: auto;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Week 4 Java Programming Notes</h1>
+
+    <h2>1. Object-Oriented Programming (OOP)</h2>
+    <ul>
+        <li>OOP is a programming paradigm based on the concept of "objects".</li>
+        <li>Key concepts include:</li>
+        <ul>
+            <li>Encapsulation</li>
+            <li>Inheritance</li>
+            <li>Polymorphism</li>
+        </ul>
+    </ul>
+
+    <h2>2. Classes and Objects</h2>
+    <ul>
+        <li>A <strong>class</strong> is a blueprint for creating objects.</li>
+        <li>An <strong>object</strong> is an instance of a class.</li>
+    </ul>
+
+    <h2>3. Defining a Class</h2>
+    <pre>
+    public class Car {
+        // Attributes (fields)
+        private int engineCapacity;
+        private String color;
+
+        // Constructor
+        public Car(int engineCapacity, String color) {
+            this.engineCapacity = engineCapacity;
+            this.color = color;
+        }
+
+        // Accessor (getter)
+        public int getEngineCapacity() {
+            return engineCapacity;
+        }
+
+        // Mutator (setter)
+        public void setColor(String color) {
+            this.color = color;
+        }
+    }
+    </pre>
+
+    <h2>4. Creating Objects</h2>
+    <pre>
+    public class Main {
+        public static void main(String[] args) {
+            // Creating an object of the Car class
+            Car myCar = new Car(2000, "Red");
+            System.out.println("Engine Capacity: " + myCar.getEngineCapacity());
+        }
+    }
+    </pre>
+
+    <h2>5. Access Modifiers</h2>
+    <ul>
+        <li>Access modifiers control the visibility of class members.</li>
+        <ul>
+            <li><code>public</code>: Accessible from any other class.</li>
+            <li><code>private</code>: Accessible only within the class itself.</li>
+            <li><code>protected</code>: Accessible within the same package and subclasses.</li>
+            <li><code>default</code>: Accessible only within the same package.</li>
+        </ul>
+    </ul>
+
+    <h2>6. Constructors</h2>
+    <ul>
+        <li>A constructor is a special method used to initialize objects.</li>
+        <li>It has the same name as the class and no return type.</li>
+    </ul>
+
+    <h2>7. Example of Constructor Overloading</h2>
+    <pre>
+    public class Car {
+        private int engineCapacity;
+        private String color;
+
+        // Default constructor
+        public Car() {
+            this.engineCapacity = 0;
+            this.color = "Undefined";
+        }
+
+        // Parameterized constructor
+        public Car(int engineCapacity, String color) {
+            this.engineCapacity = engineCapacity;
+            this.color = color;
+        }
+    }
+    </pre>
+
+    <h2>8. Instance Variables and Methods</h2>
+    <ul>
+        <li>Instance variables are unique to each object.</li>
+        <li>Instance methods operate on instance variables.</li>
+    </ul>
+
+    <h2>9. Static Variables and Methods</h2>
+    <ul>
+        <li>Static variables are shared among all instances of a class.</li>
+        <li>Static methods can be called without creating an instance of the class.</li>
+    </ul>
+    <pre>
+    public class Example {
+        static int count = 0; // Static variable
+
+        public Example() {
+            count++; // Increment count for each instance
+        }
+
+        public static void displayCount() {
+            System.out.println("Count: " + count);
+        }
+    }
+    </pre>
+
+    <h2>10. Example of Static Method</h2>
+    <pre>
+    public class Main {
+        public static void main(String[] args) {
+            new Example();
+            new Example();
+            Example.displayCount(); // Output: Count: 2
+        }
+    }
+    </pre>
+
+    <h2>11. Encapsulation</h2>
+    <ul>
+        <li>Encapsulation is the bundling of data (attributes) and methods that operate on the data into a single unit (class).</li>
+        <li>It restricts direct access to some of the object's components.</li>
+    </ul>
+
+    <h2>12. Inheritance</h2>
+    <ul>
+        <li>Inheritance allows a new class to inherit properties and methods from an existing class.</li>
+        <li>Syntax:</li>
+        <pre>
+        public class SubClass extends SuperClass {
+            // Additional methods and attributes
+        }
+        </pre>
+    </ul>
+
+    <h2>13. Example of Inheritance</h2>
+    <pre>
+    public class Vehicle {
+        public void start() {
+            System.out.println("Vehicle started");
+        }
+    }
+
+    public class Car extends Vehicle {
+        public void honk() {
+            System.out.println("Car honks");
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Car myCar = new Car();
+            myCar.start(); // Inherited method
+            myCar.honk();  // Car's own method
+        }
+    }
+    </pre>
+
+    <h2>14. Polymorphism</h2>
+    <ul>
+        <li>Polymorphism allows methods to do different things based on the object it is acting upon.</li>
+        <li>Method Overriding is a common example of polymorphism.</li>
+    </ul>
+
+    <h2>15. Example of Method Overriding</h2>
+    <pre>
+    public class Animal {
+        public void sound() {
+            System.out.println("Animal makes a sound");
+        }
+    }
+
+    public class Dog extends Animal {
+        @Override
+        public void sound() {
+            System.out.println("Dog barks");
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Animal myDog = new Dog();
+            myDog.sound(); // Output: Dog barks
+        }
+    }
+    </pre>
+
+</body>
+</html>
