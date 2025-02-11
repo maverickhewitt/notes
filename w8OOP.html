@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 8 Java Programming Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #0056b3;
+            margin-top: 20px;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-left: 5px solid #0056b3;
+            overflow-x: auto;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Week 8 Java Programming Notes</h1>
+
+    <h2>1. Abstraction in Java</h2>
+    <ul>
+        <li>Abstraction is the concept of hiding the implementation details and showing only the functionality to the user.</li>
+        <li>It can be achieved using abstract classes and interfaces.</li>
+    </ul>
+
+    <h2>2. Abstract Classes</h2>
+    <ul>
+        <li>An abstract class is a class that cannot be instantiated and may contain abstract methods (methods without a body).</li>
+        <li>Abstract classes can also have concrete methods (methods with a body).</li>
+    </ul>
+    <pre>
+    public abstract class Animal {
+        // Abstract method
+        public abstract void sound();
+
+        // Concrete method
+        public void eat() {
+            System.out.println("This animal eats food.");
+        }
+    }
+    </pre>
+
+    <h2>3. Subclassing Abstract Classes</h2>
+    <pre>
+    public class Dog extends Animal {
+        @Override
+        public void sound() {
+            System.out.println("Dog barks.");
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Animal myDog = new Dog();
+            myDog.sound(); // Output: Dog barks.
+            myDog.eat();   // Output: This animal eats food.
+        }
+    }
+    </pre>
+
+    <h2>4. Interfaces</h2>
+    <ul>
+        <li>An interface is a reference type in Java, similar to a class, that can contain only constants, method signatures, default methods, static methods, and nested types.</li>
+        <li>Interfaces cannot contain instance fields or constructors.</li>
+    </ul>
+    <pre>
+    public interface Animal {
+        void sound(); // Abstract method
+        void eat();   // Abstract method
+    }
+    </pre>
+
+    <h2>5. Implementing Interfaces</h2>
+    <pre>
+    public class Cat implements Animal {
+        @Override
+        public void sound() {
+            System.out.println("Cat meows.");
+        }
+
+        @Override
+        public void eat() {
+            System.out.println("Cat eats fish.");
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Animal myCat = new Cat();
+            myCat.sound(); // Output: Cat meows.
+            myCat.eat();   // Output: Cat eats fish.
+        }
+    }
+    </pre>
+
+    <h2>6. Multiple Inheritance with Interfaces</h2>
+    <ul>
+        <li>Java allows a class to implement multiple interfaces.</li>
+        <li>This is how Java achieves multiple inheritance.</li>
+    </ul>
+    <pre>
+    public interface Swimmable {
+        void swim();
+    }
+
+    public class Duck implements Animal, Swimmable {
+        @Override
+        public void sound() {
+            System.out.println("Duck quacks.");
+        }
+
+        @Override
+        public void eat() {
+            System.out.println("Duck eats grains.");
+        }
+
+        @Override
+        public void swim() {
+            System.out.println("Duck swims in water.");
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Duck myDuck = new Duck();
+            myDuck.sound(); // Output: Duck quacks.
+            myDuck.eat();   // Output: Duck eats grains.
+            myDuck.swim();  // Output: Duck swims in water.
+        }
+    }
+    </pre>
+
+    <h2>7. Default Methods in Interfaces</h2>
+    <ul>
+        <li>Java 8 introduced default methods in interfaces, allowing methods to have a body.</li>
+    </ul>
+    <pre>
+    public interface Animal {
+        void sound(); // Abstract method
+
+        default void sleep() {
+            System.out.println("This animal sleeps.");
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Animal myDog = new Dog();
+            myDog.sleep(); // Output: This animal sleeps.
+        }
+    }
+    </pre>
+
+    <h2>8. Summary of Key Concepts</h2>
+    <ul>
+        <li>Abstract classes cannot be instantiated and can contain both abstract and concrete methods.</li>
+        <li>Interfaces define a contract that implementing classes must follow.</li>
+        <li>Java supports multiple inheritance through interfaces.</li>
+        <li>Default methods in interfaces allow for method implementation.</li>
+    </ul>
+
+</body>
+</html>
