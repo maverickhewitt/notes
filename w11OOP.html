@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 11 Java Programming Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #0056b3;
+            margin-top: 20px;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-left: 5px solid #0056b3;
+            overflow-x: auto;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Week 11 Java Programming Notes</h1>
+
+    <h2>1. Introduction to GUI Programming</h2>
+    <ul>
+        <li>GUI programming involves creating visual interfaces for users to interact with.</li>
+        <li>Java provides several libraries for GUI programming, including AWT and Swing.</li>
+    </ul>
+
+    <h2>2. Creating a GUI Window</h2>
+    <pre>
+    import javax.swing.*;
+
+    public class GUIWindow {
+        public static void main(String[] args) {
+            JFrame frame = new JFrame("My First GUI Window");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(300, 200);
+            frame.setVisible(true);
+        }
+    }
+    </pre>
+
+    <h2>3. Adding Components to a GUI Window</h2>
+    <pre>
+    import javax.swing.*;
+
+    public class GUIComponents {
+        public static void main(String[] args) {
+            JFrame frame = new JFrame("My First GUI Window");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(300, 200);
+
+            JLabel label = new JLabel("Hello, World!");
+            frame.add(label);
+
+            frame.setVisible(true);
+        }
+    }
+    </pre>
+
+    <h2>4. Handling Events in a GUI Window</h2>
+    <pre>
+    import javax.swing.*;
+    import java.awt.event.*;
+
+    public class GUIEvents {
+        public static void main(String[] args) {
+            JFrame frame = new JFrame("My First GUI Window");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(300, 200);
+
+            JButton button = new JButton("Click Me!");
+            button.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    System.out.println("Button clicked!");
+                }
+            });
+            frame.add(button);
+
+            frame.setVisible(true);
+        }
+    }
+    </pre>
+
+    <h2>5. Using Layout Managers in a GUI Window</h2>
+    <pre>
+    import javax.swing.*;
+    import java.awt.*;
+
+    public class GUILayout {
+        public static void main(String[] args) {
+            JFrame frame = new JFrame("My First GUI Window");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(300, 200);
+
+            JPanel panel = new JPanel();
+            panel.setLayout(new FlowLayout());
+
+            JButton button1 = new JButton("Button 1");
+            JButton button2 = new JButton("Button 2");
+            JButton button3 = new JButton("Button 3");
+
+            panel.add(button1);
+            panel.add(button2);
+            panel.add(button3);
+
+            frame.add(panel);
+
+            frame.setVisible(true);
+        }
+    }
+    </pre>
+
+    <h2>6. Creating a GUI Menu</h2>
+    <pre>
+    import javax.swing.*;
+    import java.awt.*;
+
+    public class GUIMenu {
+        public static void main(String[] args) {
+            JFrame frame = new JFrame("My First GUI Window");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(300, 200);
+
+            JMenuBar menuBar = new JMenuBar();
+            frame.setJMenuBar(menuBar);
+
+            JMenu fileMenu = new JMenu("File");
+            menuBar.add(fileMenu);
+
+            JMenuItem openItem = new JMenuItem("Open");
+            fileMenu.add(openItem);
+
+            JMenuItem saveItem = new JMenuItem("Save");
+            fileMenu.add(saveItem);
+
+            frame.setVisible(true);
+        }
+    }
+    </pre>
+
+    <h2>7. Summary of Key Concepts</h2>
+    <ul>
+        <li>GUI programming involves creating visual interfaces for users to interact with.</li>
+        <li>Java provides several libraries for GUI programming, including AWT and Swing.</li>
+        <li>GUI windows can be created using the <code>JFrame</code> class.</li>
+        <li>Components can be added to a GUI window using the <code>add</code> method.</li>
+        <li>Events can be handled in a GUI window using event listeners.</li>
+        <li>Layout managers can be used to arrange components in a GUI window.</li>
+        <li>GUI menus can be created using the <code>JMenuBar</code> and <code>JMenu</code> classes.</li>
+    </ul>
+
+</body>
+</html>
