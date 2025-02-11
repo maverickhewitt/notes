@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Programming Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #0056b3;
+            margin-top: 20px;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-left: 5px solid #0056b3;
+            overflow-x: auto;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Java Programming Notes</h1>
+
+    <h2>1. Java Program Structure</h2>
+    <ul>
+        <li>A Java program is composed of one or more classes.</li>
+        <li>The syntax for declaring a class:</li>
+        <pre>class &lt;class name&gt; {
+    &lt;class member declarations&gt;
+}</pre>
+    </ul>
+
+    <h2>2. Main Class and Main Method</h2>
+    <ul>
+        <li>One class must be designated as the main class.</li>
+        <li>The main class must define a method called <code>main</code>:</li>
+        <pre>public static void main(String[] args) {
+    // Code to be executed
+}</pre>
+    </ul>
+
+    <h2>3. Comments in Java</h2>
+    <ul>
+        <li>Comments are used to explain code and are ignored by the compiler.</li>
+        <li>Single-line comment: <code>// This is a comment</code></li>
+        <li>Multi-line comment:</li>
+        <pre>/*
+This is a 
+multi-line comment
+*/</pre>
+    </ul>
+
+    <h2>4. Import Statements</h2>
+    <ul>
+        <li>Classes in the Java API are organized into packages.</li>
+        <li>Explicit import:</li>
+        <pre>import java.util.Scanner;</pre>
+        <li>Wildcard import:</li>
+        <pre>import java.util.*;</pre>
+    </ul>
+
+    <h2>5. Console Output</h2>
+    <ul>
+        <li>Using <code>System.out.println</code> for output:</li>
+        <pre>System.out.println("Welcome to Java Programming!");</pre>
+        <li>Using <code>printf</code> for formatted output:</li>
+        <pre>System.out.printf("The value is %d", value);</pre>
+    </ul>
+
+    <h2>6. Variables and Data Types</h2>
+    <ul>
+        <li>Variable declaration:</li>
+        <pre>datatype identifier;
+int num1;</pre>
+        <li>Variable initialization:</li>
+        <pre>boolean result = true;
+char capitalC = 'C';</pre>
+        <li>Example of variable usage:</li>
+        <pre>public class Variable {
+    public static void main(String[] args) {
+        int value;
+        value = 5;
+        System.out.print("The value is ");
+        System.out.println(value);
+    }
+}</pre>
+    </ul>
+
+    <h2>7. String Concatenation</h2>
+    <ul>
+        <li>Joining strings and other data types:</li>
+        <pre>System.out.println("The total is " + total);</pre>
+    </ul>
+
+    <h2>8. Primitive Data Types</h2>
+    <ul>
+        <li>Common primitive data types:</li>
+        <ul>
+            <li><code>int</code>: Integer values</li>
+            <li><code>double</code>: Floating-point values</li>
+            <li><code>boolean</code>: true/false values</li>
+            <li><code>char</code>: Single character</li>
+        </ul>
+    </ul>
+
+    <h2>9. Example of a Simple Java Program</h2>
+    <pre>public class Welcome {
+    public static void main(String[] args) {
+        System.out.println("Welcome to Java Programming!");
+    }
+}</pre>
+
+    <h2>10. Error Types in Java</h2>
+    <ul>
+        <li><strong>Syntax Errors</strong>: Detected during compilation.</li>
+        <li><strong>Run-Time Errors</strong>: Detected during execution.</li>
+        <li><strong>Logic Errors</strong>: Errors in the algorithm.</li>
+    </ul>
+
+    <h2>11. Identifiers</h2>
+    <ul>
+        <li>Rules for identifiers:</li>
+        <ul>
+            <li>Can contain letters, digits, underscores, and dollar signs.</li>
+            <li>Cannot start with a digit.</li>
+            <li>Case-sensitive (e.g., <code>myVar</code> is different from <code>myvar</code>).</li>
+        </ul>
+    </ul>
+
+    <h2>12. Example of Variable Declaration and Initialization</h2>
+    <pre>public class Initialize {
+    public static void main(String[] args) {
+        int month = 2, days = 28;
+        System.out.println("Month " + month + " has " + days + " Days.");
+    }
+}</pre>
+
+    <h2>13. Escape Sequences</h2>
+    <ul>
+        <li>Used for special characters:</li>
+        <ul>
+            <li><code>\n</code>: New line</li>
+            <li><code>\t</code>: Tab</li>
+            <li><code>\\</code>: Backslash</li>
+        </ul>
+    </ul>
+
+</body>
+</html>
