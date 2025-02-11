@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 10 Java Programming Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #0056b3;
+            margin-top: 20px;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-left: 5px solid #0056b3;
+            overflow-x: auto;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Week 10 Java Programming Notes</h1>
+
+    <h2>1. Introduction to I/O Streams</h2>
+    <ul>
+        <li>Streams are a flow of data from a source to a destination.</li>
+        <li>Java supports two types of data in streams:</li>
+        <ul>
+            <li><strong>Raw Bytes</strong>: Handled by <code>InputStream</code> and <code>OutputStream</code>.</li>
+            <li><strong>Unicode Characters</strong>: Handled by <code>Reader</code> and <code>Writer</code>.</li>
+        </ul>
+    </ul>
+
+    <h2>2. InputStream and OutputStream</h2>
+    <h3>2.1 InputStream Methods</h3>
+    <pre>
+    public class InputStreamExample {
+        public static void main(String[] args) throws IOException {
+            InputStream input = System.in; // Standard input stream
+            int data = input.read(); // Read a byte of data
+            System.out.println("You entered: " + (char)data);
+        }
+    }
+    </pre>
+
+    <h3>2.2 OutputStream Methods</h3>
+    <pre>
+    public class OutputStreamExample {
+        public static void main(String[] args) throws IOException {
+            OutputStream output = System.out; // Standard output stream
+            output.write('H'); // Write a single byte
+            output.write('i'); // Write another byte
+            output.flush(); // Flush the output stream
+        }
+    }
+    </pre>
+
+    <h2>3. Reading and Writing Files with Byte Streams</h2>
+    <h3>3.1 Reading from a File</h3>
+    <pre>
+    public class FileReadExample {
+        public static void main(String[] args) {
+            try (FileInputStream fin = new FileInputStream("input.txt")) {
+                int i;
+                while ((i = fin.read()) != -1) {
+                    System.out.print((char) i); // Print each character
+                }
+            } catch (IOException e) {
+                System.out.println("File not found: " + e.getMessage());
+            }
+        }
+    }
+    </pre>
+
+    <h3>3.2 Writing to a File</h3>
+    <pre>
+    public class FileWriteExample {
+        public static void main(String[] args) {
+            try (FileOutputStream fout = new FileOutputStream("output.txt")) {
+                String data = "Hello, World!";
+                fout.write(data.getBytes()); // Write string data to file
+            } catch (IOException e) {
+                System.out.println("Error writing to file: " + e.getMessage());
+            }
+        }
+    }
+    </pre>
+
+    <h2>4. Reader and Writer Classes</h2>
+    <h3>4.1 Using Reader</h3>
+    <pre>
+    public class FileReaderExample {
+        public static void main(String[] args) {
+            try (BufferedReader reader = new BufferedReader(new FileReader("input.txt"))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    System.out.println(line); // Print each line
+                }
+            } catch (IOException e) {
+                System.out.println("Error reading file: " + e.getMessage());
+            }
+        }
+    }
+    </pre>
+
+    <h3>4.2 Using Writer</h3>
+    <pre>
+    public class FileWriterExample {
+        public static void main(String[] args) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))) {
+                writer.write("Hello, World!"); // Write a line to the file
+                writer.newLine(); // Add a new line
+                writer.write("This is a second line.");
+            } catch (IOException e) {
+                System.out.println("Error writing to file: " + e.getMessage());
+            }
+        }
+    }
+    </pre>
+
+    <h2>5. Using Scanner for Input</h2>
+    <pre>
+    import java.util.Scanner;
+
+    public class ScannerExample {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter your name: ");
+            String name = scanner.nextLine(); // Read a line of text
+            System.out.println("Hello, " + name + "!");
+            scanner.close(); // Close the scanner
+        }
+    }
+    </pre>
+
+    <h2>6. Summary of Key Concepts</h2>
+    <ul>
+        <li>Java provides a variety of classes for handling input and output operations.</li>
+        <li>Input and output can be performed using byte streams or character streams.</li>
+        <li>Files can be read and written using <code>FileInputStream</code> and <code>FileOutputStream</code>.</li>
+        <li>Using <code>Scanner</code> simplifies reading input from the console.</li>
+    </ul>
+
+</body>
+</html>
