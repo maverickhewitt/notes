@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Software Design Fundamentals Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Software Design Fundamentals (KK24803)</h1>
+
+    <!-- Section 1: Introduction to Design -->
+    <section>
+        <h2>1. What is Design?</h2>
+        <ul>
+            <li><strong>Definitions:</strong>
+                <ul>
+                    <li>A <em>creative planning process</em> leading to useful products/systems (with criteria and constraints).</li>
+                    <li>Involves decision-making under uncertainty and incomplete information.</li>
+                    <li>Produces unexpected solutions using imagination and modeling.</li>
+                </ul>
+            </li>
+            <li><strong>Perspectives:</strong>
+                <ul>
+                    <li><em>Noun:</em> A plan, blueprint, or outcome.</li>
+                    <li><em>Verb:</em> The act of creating the plan.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Section 2: Design Process -->
+    <section>
+        <h2>2. Design Process</h2>
+        <ol>
+            <li>Define the Problem</li>
+            <li>Brainstorm Ideas</li>
+            <li>Research & Develop Ideas</li>
+            <li>Model/Prototype</li>
+            <li>Test & Evaluate</li>
+            <li>Choose Best Idea</li>
+            <li>Improve Design</li>
+            <li>Communicate Results</li>
+        </ol>
+    </section>
+
+    <!-- Section 3: Software Design Overview -->
+    <section>
+        <h2>3. Software Design</h2>
+        <blockquote>
+            "An iterative process translating requirements into a blueprint for software construction."
+        </blockquote>
+        <p><strong>Key Stakeholders:</strong></p>
+        <ul>
+            <li>Customers (satisfy needs)</li>
+            <li>Developers (implementation)</li>
+        </ul>
+    </section>
+
+    <!-- Section 4: Conceptual vs. Technical Design -->
+    <section>
+        <h2>4. Conceptual vs. Technical Design</h2>
+        <table border="1">
+            <tr>
+                <th>Conceptual Design (What)</th>
+                <th>Technical Design (How)</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>Data sources & flow</li>
+                        <li>User interface appearance</li>
+                        <li>User choices & reports</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Hardware/software configuration</li>
+                        <li>Network architecture</li>
+                        <li>I/O systems</li>
+                        <li>Software components</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Section 5: Software Design Process -->
+    <section>
+        <h2>5. Software Design Process</h2>
+        <ul>
+            <li><strong>Input:</strong> Requirement specifications</li>
+            <li><strong>Steps:</strong>
+                <ol>
+                    <li>Architectural Design</li>
+                    <li>Interface Design</li>
+                    <li>Component Design</li>
+                    <li>Data Structure Design</li>
+                    <li>Algorithm Design</li>
+                </ol>
+            </li>
+            <li><strong>Output:</strong> Design model & specification document</li>
+        </ul>
+    </section>
+
+    <!-- Section 6: Design Specification Model -->
+    <section>
+        <h2>6. Design Specification Model</h2>
+        <ul>
+            <li><strong>Data Design:</strong> Transforms analysis models (e.g., ERD) into data structures.</li>
+            <li><strong>Architectural Design:</strong> Defines relationships between major software elements.</li>
+            <li><strong>Interface Design:</strong> Specifies communication between software elements and users.</li>
+            <li><strong>Procedural Design:</strong> Details software components’ logic.</li>
+        </ul>
+    </section>
+
+    <!-- Section 7: Software Design Views -->
+    <section>
+        <h2>7. Software Design Views</h2>
+        <table border="1">
+            <tr>
+                <th>Design View</th>
+                <th>Scope</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>Decomposition</td>
+                <td>Partitions system into entities</td>
+                <td>Hierarchical diagrams</td>
+            </tr>
+            <tr>
+                <td>Dependency</td>
+                <td>Relationships among entities</td>
+                <td>Data flow diagrams</td>
+            </tr>
+            <tr>
+                <td>Interface</td>
+                <td>Usage details for entities</td>
+                <td>Parameter tables</td>
+            </tr>
+            <tr>
+                <td>Detail</td>
+                <td>Internal entity design</td>
+                <td>Flowcharts</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Section 8: Fundamental Concepts -->
+    <section>
+        <h2>8. Fundamental Concepts</h2>
+        <ul>
+            <li><strong>Abstraction:</strong>
+                <ul>
+                    <li>Procedural (how tasks are done)</li>
+                    <li>Data (object representation)</li>
+                </ul>
+            </li>
+            <li><strong>Architecture:</strong> Overall software structure (e.g., modules)</li>
+            <li><strong>Patterns:</strong> Reusable solutions (e.g., Prototype pattern)</li>
+            <li><strong>Modularity:</strong> Splitting code into independent modules</li>
+            <li><strong>Information Hiding:</strong> Limit module communication to essentials</li>
+            <li><strong>Functional Independence:</strong>
+                <ul>
+                    <li>High cohesion (single-purpose modules)</li>
+                    <li>Low coupling (minimal inter-module dependencies)</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Section 9: SDLC & Waterfall Model -->
+    <section>
+        <h2>9. SDLC (Software Development Life Cycle)</h2>
+        <ol>
+            <li>Requirements</li>
+            <li>Analysis</li>
+            <li>Design</li>
+            <li>Implementation</li>
+            <li>Testing</li>
+            <li>Installation</li>
+            <li>Maintenance</li>
+        </ol>
+        <h3>Key SDLC Activities</h3>
+        <table border="1">
+            <tr>
+                <th>Phase</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Architectural Design</td>
+                <td>Break solution into components</td>
+            </tr>
+            <tr>
+                <td>Component Design</td>
+                <td>Identify classes & responsibilities</td>
+            </tr>
+            <tr>
+                <td>Integration Test</td>
+                <td>Test groups of classes together</td>
+            </tr>
+            <tr>
+                <td>Acceptance Test</td>
+                <td>Validate against requirements</td>
+            </tr>
+        </table>
+    </section>
+</body>
+</html>
