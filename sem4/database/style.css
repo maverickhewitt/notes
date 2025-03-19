@@ -19,3 +19,16 @@ ul {
 img{
   width: 80%;
 }
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #0056b3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #004494;
+}
