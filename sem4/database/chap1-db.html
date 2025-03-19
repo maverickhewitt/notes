@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Module 1: Database Systems Notes</title>
+</head>
+<body>
+    <h1>Module 1: Database Systems</h1>
+    
+    <!-- Chapter Objectives -->
+    <section>
+        <h2>Chapter Objectives</h2>
+        <ul>
+            <li>Define the difference between data and information.</li>
+            <li>Describe databases, their types, and their value in decision-making.</li>
+            <li>Explain the importance of database design.</li>
+            <li>Trace the evolution from file systems to modern databases.</li>
+            <li>Understand flaws in file systems.</li>
+            <li>Outline components of a database system.</li>
+            <li>Describe DBMS functions.</li>
+        </ul>
+    </section>
+
+    <!-- Key Concepts -->
+    <section>
+        <h2>Key Concepts</h2>
+        
+        <!-- Data vs Information -->
+        <div>
+            <h3>Data vs Information</h3>
+            <ul>
+                <li><strong>Data:</strong> Raw facts (e.g., name, age, weight).</li>
+                <li><strong>Information:</strong> Processed data with context (e.g., average student age).</li>
+                <li>Data is the foundation of knowledge; good decision-making relies on accurate information.</li>
+            </ul>
+        </div>
+
+        <!-- Database & DBMS -->
+        <div>
+            <h3>Database & DBMS</h3>
+            <ul>
+                <li><strong>Database:</strong> Shared, integrated structure storing end-user data and metadata.</li>
+                <li><strong>DBMS:</strong> Manages database structure and controls data access. Key functions:
+                    <ul>
+                        <li>Data storage/retrieval</li>
+                        <li>Security management</li>
+                        <li>Backup/recovery</li>
+                        <li>Query processing (e.g., SQL)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Types of Databases -->
+        <div>
+            <h3>Types of Databases</h3>
+            <table border="1">
+                <tr>
+                    <th>Classification</th>
+                    <th>Types</th>
+                </tr>
+                <tr>
+                    <td>By User</td>
+                    <td>Single-user (desktop), Multi-user (workgroup, enterprise)</td>
+                </tr>
+                <tr>
+                    <td>By Location</td>
+                    <td>Centralized, Distributed, Cloud</td>
+                </tr>
+                <tr>
+                    <td>By Data Type</td>
+                    <td>
+                        <ul>
+                            <li>General-purpose (MySQL, Oracle)</li>
+                            <li>Discipline-specific (CINAHL, PsycINFO)</li>
+                            <li>Operational (day-to-day)</li>
+                            <li>Analytical (data warehouses, OLAP)</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- File System Flaws -->
+        <div>
+            <h3>File System Flaws</h3>
+            <ul>
+                <li><strong>Structural Dependence:</strong> File access depends on structure.</li>
+                <li><strong>Data Redundancy:</strong> Duplicate data causing inconsistency.</li>
+                <li><strong>Data Anomalies:</strong>
+                    <ul>
+                        <li>Insertion: Forced duplication.</li>
+                        <li>Deletion: Accidental data loss.</li>
+                        <li>Modification: Inconsistent updates.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Database System Components -->
+        <div>
+            <h3>Database System Components</h3>
+            <ul>
+                <li>Hardware</li>
+                <li>Software (DBMS)</li>
+                <li>People (users, admins)</li>
+                <li>Procedures</li>
+                <li>Data</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Examples & Case Studies -->
+    <section>
+        <h2>Examples</h2>
+        <div>
+            <h3>Real-World Database Use (Susan’s Day)</h3>
+            <ul>
+                <li>Grocery shopping: Product inventory databases.</li>
+                <li>Pharmacy: Customer and prescription records.</li>
+                <li>Online shopping: Recommendation engines.</li>
+                <li>Social media: User profiles and interactions.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Poor vs Good Design</h3>
+            <ul>
+                <li><strong>Poor Design:</strong> Redundant entries, anomalies (e.g., blank rows in employee skills table).</li>
+                <li><strong>Good Design:</strong> Normalized tables (EMPLOYEE, SKILL, CERTIFIED) with relationships.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Career Paths -->
+    <section>
+        <h2>Database Careers</h2>
+        <ul>
+            <li>Database Developer</li>
+            <li>Database Administrator</li>
+            <li>Data Scientist</li>
+            <li>Cloud Data Architect</li>
+        </ul>
+    </section>
+
+    <!-- Summary -->
+    <section>
+        <h2>Summary</h2>
+        <p>Databases enable efficient, secure data management. Proper design minimizes redundancy and anomalies. DBMS tools streamline storage, retrieval, and analysis, supporting decision-making across industries.</p>
+    </section>
+</body>
+</html>
