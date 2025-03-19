@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Software Design Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .flashcard-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            backface-visibility: hidden;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+            color: #2c3e50;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .progress {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="flashcard-container">
+        <h1>Software Design Flashcards</h1>
+        <div class="progress">Card <span id="current">1</span> of <span id="total"></span></div>
+        <div class="card" onclick="flipCard()">
+            <div class="card-front" id="front"></div>
+            <div class="card-back" id="back"></div>
+        </div>
+        <div class="navigation">
+            <button onclick="prevCard()">Previous</button>
+            <button onclick="nextCard()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const flashcards = [
+             {
+                question: "What is Design?",
+                answer: "PRANKK. Malas bos mau buat nantila"
+            }
+            // {
+            //     question: "What is Design?",
+            //     answer: "A creative planning process leading to useful products/systems with criteria and constraints. Involves decision-making under uncertainty and produces solutions using imagination and modeling."
+            // },
+            // {
+            //     question: "Design Perspectives",
+            //     answer: "Noun: A plan/blueprint/outcome<br>Verb: The act of creating the plan"
+            // },
+            // {
+            //     question: "Design Process Steps",
+            //     answer: "1. Define Problem<br>2. Brainstorm<br>3. Research & Develop<br>4. Model/Prototype<br>5. Test & Evaluate<br>6. Choose Idea<br>7. Improve<br>8. Communicate"
+            // },
+            // {
+            //     question: "Software Design Definition",
+            //     answer: "An iterative process translating requirements into a blueprint for construction. Balances customer needs and developer implementation."
+            // },
+            // {
+            //     question: "Conceptual vs Technical Design",
+            //     answer: "Conceptual (What): Data flow, UI, user choices<br>Technical (How): Hardware/software config, network architecture, I/O systems"
+            // },
+            // {
+            //     question: "Software Design Process Steps",
+            //     answer: "1. Architectural Design<br>2. Interface Design<br>3. Component Design<br>4. Data Structure Design<br>5. Algorithm Design"
+            // },
+            // {
+            //     question: "Design Specification Model Components",
+            //     answer: "Data Design<br>Architectural Design<br>Interface Design<br>Procedural Design"
+            // },
+            // {
+            //     question: "Software Design Views",
+            //     answer: "Decomposition (hierarchy)<br>Dependency (relationships)<br>Interface (usage)<br>Detail (internal)"
+            // },
+            // {
+            //     question: "Key Design Concepts",
+            //     answer: "Abstraction<br>Architecture<br>Patterns<br>Modularity<br>Information Hiding<br>Functional Independence"
+            // },
+            // {
+            //     question: "SDLC Phases",
+            //     answer: "1. Requirements<br>2. Analysis<br>3. Design<br>4. Implementation<br>5. Testing<br>6. Installation<br>7. Maintenance"
+            // }
+        ];
+
+        let currentCard = 0;
+        const card = document.querySelector('.card');
+        const front = document.getElementById('front');
+        const back = document.getElementById('back');
+        const currentSpan = document.getElementById('current');
+        const totalSpan = document.getElementById('total');
+
+        function updateCard() {
+            front.innerHTML = flashcards[currentCard].question;
+            back.innerHTML = flashcards[currentCard].answer;
+            currentSpan.textContent = currentCard + 1;
+            card.classList.remove('flipped');
+        }
+
+        function flipCard() {
+            card.classList.toggle('flipped');
+        }
+
+        function nextCard() {
+            if(currentCard < flashcards.length - 1) {
+                currentCard++;
+                updateCard();
+            }
+        }
+
+        function prevCard() {
+            if(currentCard > 0) {
+                currentCard--;
+                updateCard();
+            }
+        }
+
+        // Initialize
+        totalSpan.textContent = flashcards.length;
+        updateCard();
+    </script>
+</body>
+</html>
