@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 2: Operating-System Structures</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button onclick="window.location.href='index_os.html'">Back</button>
+    <h1>Chapter 2: Operating-System Structures</h1>
+
+    <!-- Section 1: OS Services -->
+    <section>
+        <h2>1. Operating System Services</h2>
+        <ul>
+            <li><strong>User Interface (UI):</strong> CLI, GUI, or Batch</li>
+            <li><strong>Program Execution:</strong> Load/run programs, handle errors</li>
+            <li><strong>I/O Operations:</strong> Manage files and devices</li>
+            <li><strong>File-System Manipulation:</strong> Create/delete files, manage permissions</li>
+            <li><strong>Communications:</strong> Shared memory or message passing</li>
+            <li><strong>Error Detection:</strong> Hardware/software error handling</li>
+            <li><strong>Resource Allocation:</strong> CPU, memory, I/O devices</li>
+            <li><strong>Accounting:</strong> Track resource usage</li>
+            <li><strong>Protection & Security:</strong> Control access, user authentication</li>
+        </ul>
+        <blockquote>
+            <strong>Key Diagram:</strong> OS services layer between hardware and user applications.
+        </blockquote>
+    </section>
+
+    <!-- Section 2: User Interfaces -->
+    <section>
+        <h2>2. User OS Interfaces</h2>
+        <h3>Command-Line Interface (CLI)</h3>
+        <ul>
+            <li>Examples: Unix shells (Bash), Windows Command Prompt</li>
+            <li>Commands: <span class="code">ls</span>, <span class="code">ping</span>, <span class="code">iostat</span></li>
+        </ul>
+
+        <h3>Graphical User Interface (GUI)</h3>
+        <ul>
+            <li>Examples: Windows Explorer, macOS Aqua</li>
+            <li>Features: Icons, windows, touch/gesture support</li>
+        </ul>
+
+        <h3>Touchscreen Interfaces</h3>
+        <ul>
+            <li>Gestures, virtual keyboards, voice commands</li>
+            <li>Used in iOS, Android</li>
+        </ul>
+    </section>
+
+    <!-- Section 3: System Calls -->
+    <section>
+        <h2>3. System Calls</h2>
+        <blockquote>
+            "Programming interface to OS services, typically via APIs (e.g., POSIX, Windows API)."
+        </blockquote>
+
+        <h3>Types of System Calls</h3>
+        <table>
+            <tr><th>Category</th><th>Examples</th></tr>
+            <tr><td>Process Control</td><td><span class="code">fork()</span>, <span class="code">exec()</span></td></tr>
+            <tr><td>File Management</td><td><span class="code">open()</span>, <span class="code">read()</span></td></tr>
+            <tr><td>Device Management</td><td><span class="code">ioctl()</span></td></tr>
+            <tr><td>Communication</td><td><span class="code">pipe()</span>, <span class="code">shmget()</span></td></tr>
+            <tr><td>Protection</td><td><span class="code">chmod()</span>, <span class="code">setuid()</span></td></tr>
+        </table>
+
+        <h3>Parameter Passing Methods</h3>
+        <ul>
+            <li>Registers</li>
+            <li>Memory block/table</li>
+            <li>Stack</li>
+        </ul>
+    </section>
+
+    <!-- Section 4: System Programs -->
+    <section>
+        <h2>4. System Programs & Services</h2>
+        <ul>
+            <li><strong>File Management:</strong> <span class="code">cp</span>, <span class="code">rm</span></li>
+            <li><strong>Status Information:</strong> <span class="code">top</span>, <span class="code">df</span></li>
+            <li><strong>Programming Support:</strong> Compilers, debuggers</li>
+            <li><strong>Background Services:</strong> Daemons (e.g., <span class="code">systemd</span>)</li>
+        </ul>
+    </section>
+
+    <!-- Section 5: OS Design -->
+    <section>
+        <h2>5. OS Design & Implementation</h2>
+        <h3>Key Principles</h3>
+        <ul>
+            <li><strong>Policy vs. Mechanism:</strong> Separate "what" from "how"</li>
+            <li><strong>Implementation:</strong> Mix of C/C++/Assembly</li>
+        </ul>
+
+        <h3>Design Goals</h3>
+        <table>
+            <tr><th>User Goals</th><th>System Goals</th></tr>
+            <tr><td>Convenience</td><td>Efficiency</td></tr>
+            <tr><td>Reliability</td><td>Maintainability</td></tr>
+        </table>
+    </section>
+
+    <!-- Section 6: OS Structures -->
+    <section>
+        <h2>6. Operating System Structures</h2>
+        <h3>Approaches</h3>
+        <table>
+            <tr><th>Type</th><th>Example</th><th>Features</th></tr>
+            <tr><td>Simple</td><td>MS-DOS</td><td>Monolithic, no modules</td></tr>
+            <tr><td>Layered</td><td>THE OS</td><td>Hierarchical layers</td></tr>
+            <tr><td>Microkernel</td><td>Mach</td><td>Minimal kernel, message passing</td></tr>
+            <tr><td>Modular</td><td>Linux</td><td>Loadable kernel modules</td></tr>
+            <tr><td>Hybrid</td><td>Windows/macOS</td><td>Combines multiple approaches</td></tr>
+        </table>
+
+        <h3>Modern OS Examples</h3>
+        <ul>
+            <li><strong>macOS:</strong> Hybrid (Mach microkernel + BSD)</li>
+            <li><strong>Android:</strong> Modified Linux kernel + ART runtime</li>
+            <li><strong>iOS:</strong> Cocoa Touch framework on Darwin kernel</li>
+        </ul>
+    </section>
+
+    <!-- Section 7: System Boot & Debugging -->
+    <section>
+        <h2>7. System Boot & Debugging</h2>
+        <h3>Boot Process</h3>
+        <ol>
+            <li>BIOS/UEFI initializes hardware</li>
+            <li>Bootstrap loader (e.g., GRUB) loads kernel</li>
+            <li>Kernel initializes hardware and mounts root filesystem</li>
+        </ol>
+
+        <h3>Debugging Tools</h3>
+        <ul>
+            <li><strong>Logs:</strong> Crash dumps, syslog</li>
+            <li><strong>Performance Tuning:</strong> <span class="code">top</span>, Task Manager</li>
+            <li><strong>Advanced Tools:</strong> DTrace (Solaris), <span class="code">strace</span></li>
+        </ul>
+        <blockquote>
+            "Kernighan’s Law: Debugging is twice as hard as writing the code."
+        </blockquote>
+    </section>
+
+</body>
+</html>
