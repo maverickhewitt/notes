@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>IoT Fundamentals: Chapter 2 Detailed Notes</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <button onclick="window.location.href='index_iot.html'">Back</button>
+    <h1>Chapter 2: Sensors, Actuators, and Microcontrollers</h1>
+
+    <!-- Section 2.1 -->
+    <h2>2.1 Learn Electronics</h2>
+    
+    <h3>2.1.1 Basic Electronic Terminology & Concepts</h3>
+    <ul>
+        <li><strong>Electronics Definition:</strong> Study of controlling electricity using physical components and circuits.</li>
+        <li><strong>Core Concepts:</strong>
+            <ul>
+                <li><strong>Electric Current:</strong> Flow of electrons (measured in Amperes, <em>A</em>).</li>
+                <li><strong>Voltage (V):</strong> Electrical potential difference (e.g., battery voltage).</li>
+                <li><strong>Resistance (Ω):</strong> Opposition to current flow (e.g., resistors).</li>
+                <li><strong>Power (W):</strong> Rate of energy transfer (\( P = V \times I \)).</li>
+            </ul>
+        </li>
+        <li><strong>Ohm's Law:</strong> 
+            <ul>
+                <li>Formula: \( V = I \times R \).</li>
+                <li><em>Example:</em> A 6V battery with a 2.2kΩ resistor limits current to protect an LED.</li>
+            </ul>
+        </li>
+        <li><strong>Basic Circuit Components:</strong>
+            <ul>
+                <li><strong>Battery:</strong> Energy source (e.g., 6V DC).</li>
+                <li><strong>Resistor:</strong> Limits current (e.g., 2.2kΩ for LED protection).</li>
+                <li><strong>LED:</strong> Light-emitting diode (symbol includes arrows for light emission).</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2.1.2 Advanced Electronic Terminology</h3>
+    <ul>
+        <li><strong>Circuit Types:</strong>
+            <ul>
+                <li><strong>Series:</strong> Components connected end-to-end (same current).</li>
+                <li><strong>Parallel:</strong> Components share common nodes (same voltage).</li>
+            </ul>
+        </li>
+        <li><strong>Component Categories:</strong>
+            <ul>
+                <li><strong>Active:</strong> Require external power (e.g., transistors).</li>
+                <li><strong>Passive:</strong> No external power (e.g., resistors, capacitors).</li>
+            </ul>
+        </li>
+        <li><strong>Current Types:</strong>
+            <ul>
+                <li><strong>DC (Direct Current):</strong> Unidirectional flow (e.g., batteries, solar cells).</li>
+                <li><strong>AC (Alternating Current):</strong> Bidirectional flow (e.g., power grids).</li>
+            </ul>
+        </li>
+        <li><strong>Key Components:</strong>
+            <ul>
+                <li><strong>Solenoids:</strong> Electromagnetic actuators (e.g., door latches, valves).</li>
+                <li><strong>Relays:</strong> Electrically controlled switches (e.g., high-voltage control).</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2.1.3 From Schematic to PCB</h3>
+    <ul>
+        <li><strong>Design Phase:</strong>
+            <ul>
+                <li><strong>Concept:</strong> Define circuit purpose.</li>
+                <li><strong>Research:</strong> Select components (e.g., sensors, resistors).</li>
+                <li><strong>Schematic:</strong> Standardized diagram (e.g., symbols for LEDs, resistors).</li>
+            </ul>
+        </li>
+        <li><strong>Prototype Phase:</strong>
+            <ul>
+                <li><strong>Breadboard:</strong> Solderless prototyping tool.</li>
+                <li><strong>PCB Layout:</strong> Design for printed circuit boards.</li>
+                <li><strong>Testing:</strong> Validate functionality (e.g., voltage checks).</li>
+            </ul>
+        </li>
+        <li><strong>Production Phase:</strong>
+            <ul>
+                <li><strong>PCB Manufacturing:</strong> Mass production of circuits.</li>
+                <li><strong>Maintenance:</strong> Firmware updates, component replacements.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- Section 2.2 -->
+    <h2>2.2 Microcontrollers: SparkFun Inventor’s Kit (SIK)</h2>
+    
+    <h3>2.2.1 Kit Components</h3>
+    <ul>
+        <li><strong>Hardware:</strong>
+            <ul>
+                <li>SparkFun RedBoard (Arduino-compatible).</li>
+                <li>Solderless breadboard, jumper wires, USB cable.</li>
+                <li>Resistors (e.g., 330Ω, 10kΩ), LEDs, sensors (temperature, flex).</li>
+            </ul>
+        </li>
+        <li><strong>Software:</strong>
+            <ul>
+                <li>Arduino IDE for programming (<code>.ino</code> sketches).</li>
+                <li>Key functions: <code>setup()</code>, <code>loop()</code>, <code>digitalWrite()</code>.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2.2.2 Simple Circuits & Programming</h3>
+    <ul>
+        <li><strong>Example Circuit:</strong>
+            <ul>
+                <li>Connect LED + resistor in series to RedBoard pins.</li>
+                <li>Code snippet: 
+                    <pre>void setup() { pinMode(13, OUTPUT); }
+void loop() { digitalWrite(13, HIGH); }</pre>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Debugging:</strong>
+            <ul>
+                <li>Compile with <code>✓</code> (checkmark) in Arduino IDE.</li>
+                <li>Upload code with <code>→</code> (arrow) icon.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2.2.3 Sensors & Actuators</h3>
+    <ul>
+        <li><strong>Sensors in SIK:</strong>
+            <ul>
+                <li><strong>Soft Potentiometer:</strong> Pressure-sensitive resistor.</li>
+                <li><strong>Photo Resistor:</strong> Light-dependent resistance.</li>
+                <li><strong>Temperature Sensor:</strong> Outputs analog voltage proportional to temperature.</li>
+            </ul>
+        </li>
+        <li><strong>Actuators:</strong>
+            <ul>
+                <li><strong>Servo Motor:</strong> Precise angular control.</li>
+                <li><strong>Relay Module:</strong> Switches high-power devices (e.g., lamps).</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- Section 2.3 -->
+    <h2>2.3 Packet Tracer 7.x and IoT</h2>
+    <ul>
+        <li><strong>IoT Simulation:</strong>
+            <ul>
+                <li>Model end-to-end systems (e.g., smart home, industrial IoT).</li>
+                <li><strong>Components Group:</strong> MCU (Arduino-like), SBC (Raspberry Pi-like), sensors/actuators.</li>
+            </ul>
+        </li>
+        <li><strong>Key Features:</strong>
+            <ul>
+                <li><strong>IoE Custom Cable:</strong> Connects IoT devices to MCU/SBC.</li>
+                <li><strong>Programming:</strong> Drag-and-drop logic for sensor-actuator workflows.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- Section 2.4 -->
+    <h2>2.4 Chapter Summary</h2>
+    <ul>
+        <li><strong>Electronics Fundamentals:</strong> Ohm’s Law, circuit design, component roles.</li>
+        <li><strong>Hands-On Learning:</strong> SparkFun Kit for prototyping circuits, sensors, and actuators.</li>
+        <li><strong>IoT Modeling:</strong> Packet Tracer 7.x for simulating MCU/SBC-based systems.</li>
+    </ul>
+</body>
+</html>
