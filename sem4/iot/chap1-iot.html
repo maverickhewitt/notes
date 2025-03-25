@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IoT Chapter 1: Things and Connections</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button onclick="window.location.href='index_os.html'">Back</button>
+    <h1>Chapter 1: Things and Connections</h1>
+
+    <!-- Section 1.1: What are Things? -->
+    <section>
+        <h2>1.1 What are Things?</h2>
+
+        <h3>1.1.1 The Internet of Things</h3>
+        <ul>
+            <li><strong>IoT Presence:</strong> Embedded in daily life for quality-of-life improvements and industrial efficiency.</li>
+            <li><strong>Cisco IoT System:</strong>
+                <ul>
+                    <li>Addresses IoT complexity through six pillars:</li>
+                    <ol>
+                        <li>Network Connectivity</li>
+                        <li>Fog Computing</li>
+                        <li>Cybersecurity & Physical Security</li>
+                        <li>Data Analytics</li>
+                        <li>Management & Automation</li>
+                        <li>Application Enablement Platform</li>
+                    </ol>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>1.1.2 Building Blocks of an IoT System</h3>
+        <table>
+            <tr><th>Component</th><th>Role</th></tr>
+            <tr><td>Sensors</td><td>Measure physical properties (e.g., temperature, motion)</td></tr>
+            <tr><td>Actuators</td><td>Convert electrical signals to physical actions (e.g., motors, valves)</td></tr>
+            <tr><td>Controllers</td><td>Collect sensor data, provide connectivity, and make decisions</td></tr>
+        </table>
+        <blockquote>
+            <strong>IoT Process Flow:</strong> Sensors → Controllers → Actuators (via wired/wireless connections).
+        </blockquote>
+
+        <h3>1.1.3 Processes in Controlled Systems</h3>
+        <ul>
+            <li><strong>Feedback Loop:</strong> Output affects input to maintain desired state.</li>
+            <li><strong>Control Systems:</strong>
+                <ul>
+                    <li><em>Open-Loop:</em> No feedback (e.g., simple timers).</li>
+                    <li><em>Closed-Loop:</em> Uses feedback (e.g., thermostat with PID controller).</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="highlight">
+            <strong>PID Controllers:</strong> Use Proportional (P), Integral (I), and Derivative (D) calculations for precise control.
+        </div>
+    </section>
+
+    <!-- Section 1.2: What are Connections? -->
+    <section>
+        <h2>1.2 What are Connections?</h2>
+
+        <h3>1.2.1 Models of Communication</h3>
+        <ul>
+            <li><strong>Layered Models:</strong>
+                <ul>
+                    <li>OSI Model (7 layers)(PDNT-SPA)</li>
+                    <li>TCP/IP Model (4 layers)</li>
+                    <li>IoT World Forum Model (7 layers)</li>
+                </ul>
+            </li>
+            <li><strong>Standardization Bodies:</strong> Industrial Internet Consortium, OpenFog Consortium, Open Connectivity Foundation.</li>
+        </ul>
+
+        <h3>1.2.2 Layers of Connections</h3>
+        <table>
+            <tr><th>Layer</th><th>Protocols/Technologies</th><th>Function</th></tr>
+            <tr><td>Physical</td><td>Copper, Fiber, Wireless</td><td>Transmit raw data bits</td></tr>
+            <tr><td>Data Link</td><td>Ethernet, Wi-Fi (802.11), Bluetooth (802.15)</td><td>Frame transmission & error detection</td></tr>
+            <tr><td>Application</td><td>MQTT, REST</td><td>Device communication & data exchange</td></tr>
+        </table>
+        <blockquote>
+            <strong>IoT Architectures:</strong> Device-to-Device, Device-to-Cloud, Device-to-Gateway-to-Cloud.
+        </blockquote>
+
+        <h3>1.2.3 Privacy & Security Impacts</h3>
+        <ul>
+            <li><strong>Metadata:</strong> "Data about data" (e.g., timestamps, device IDs).</li>
+            <li><strong>Privacy Considerations:</strong>
+                <ul>
+                    <li>Transparency in data collection</li>
+                    <li>Limiting data access</li>
+                </ul>
+            </li>
+            <li><strong>Security Challenges:</strong>
+                <ul>
+                    <li>Scale of IoT devices</li>
+                    <li>Non-traditional device locations</li>
+                    <li>Lack of firmware updates</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Chapter Summary -->
+    <section>
+        <h2>1.3 Chapter Summary</h2>
+        <ul>
+            <li>IoT systems combine sensors, actuators, controllers, and software.</li>
+            <li>Closed-loop systems use feedback for precise control (e.g., PID controllers).</li>
+            <li>Communication models (OSI, TCP/IP) standardize IoT device interactions.</li>
+            <li>Security & privacy must be prioritized across all IoT layers.</li>
+        </ul>
+    </section>
+
+</body>
+</html>
