@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module 2: Data Models - Comprehensive Notes</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+  <button onclick="window.location.href='index_db.html'">Back</button>
+    <h1>Database Systems: Data Models (Module 2)</h1>
+
+    <!-- Section 1: Core Concepts -->
+    <section>
+        <h2>1. Data Modeling Fundamentals</h2>
+        <ul>
+            <li><strong>Data Model:</strong> A simplified abstraction of real-world data structures (e.g., ER diagrams, relational tables).</li>
+            <li><strong>Purpose:</strong> Acts as a blueprint for database design, ensuring consistency and communication between stakeholders.</li>
+            <li><strong>Data Modeling Process:</strong> Iterative and progressive, involving entities, attributes, relationships, and constraints.</li>
+        </ul>
+    </section>
+
+    <!-- Section 2: Building Blocks -->
+    <section>
+        <h2>2. Core Components</h2>
+        <h3>Entities & Attributes</h3>
+        <ul>
+            <li><strong>Entity:</strong> A distinct object (e.g., <em>Customer</em>, <em>Invoice</em>).</li>
+            <li><strong>Attribute:</strong> A property of an entity (e.g., <em>Customer_ID</em>, <em>Invoice_Date</em>).</li>
+            <li><strong>Naming Conventions:</strong> Prefix attributes with entity abbreviations (e.g., <code>CUS_CREDIT_LIMIT</code>).</li>
+        </ul>
+
+        <h3>Relationships & Constraints</h3>
+        <table border="1">
+            <tr>
+                <th>Type</th>
+                <th>Definition</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>1:1</td>
+                <td>One-to-One (e.g., Student ↔ Student ID)</td>
+                <td>1 employee manages 1 store.</td>
+            </tr>
+            <tr>
+                <td>1:M</td>
+                <td>One-to-Many (e.g., Mentor ↔ Mentees)</td>
+                <td>1 department has many employees.</td>
+            </tr>
+            <tr>
+                <td>M:N</td>
+                <td>Many-to-Many (e.g., Students ↔ Courses)</td>
+                <td>Employees learn multiple skills.</td>
+            </tr>
+        </table>
+        <p><strong>Constraints:</strong> Rules like "GPA must be 0.00–4.00" or "Each class has one teacher."</p>
+    </section>
+
+    <!-- Section 3: Business Rules -->
+    <section>
+        <h2>3. Business Rules & Design</h2>
+        <ul>
+            <li><strong>Definition:</strong> Clear policies that shape database structure (e.g., "An invoice belongs to one customer").</li>
+            <li><strong>Role:</strong> Define entities, relationships, and constraints. Example:
+                <ul>
+                    <li>"A customer may generate many invoices" → <em>Customer</em> and <em>Invoice</em> entities with a 1:M relationship.</li>
+                </ul>
+            </li>
+            <li><strong>Sources:</strong> Managers, policy documents, workflows.</li>
+        </ul>
+    </section>
+
+    <!-- Section 4: Data Model Evolution -->
+    <section>
+        <h2>4. Evolution of Data Models</h2>
+        <h3>Historical Models</h3>
+        <ul>
+            <li><strong>Hierarchical Model (1960s):</strong> Tree-like parent-child structures (e.g., IBM’s IMS).</li>
+            <li><strong>Network Model:</strong> Graph-based with schema/subschema, DML/DDL (e.g., CODASYL).</li>
+        </ul>
+
+        <h3>Modern Models</h3>
+        <ul>
+            <li><strong>Relational Model:</strong>
+                <ul>
+                    <li>Based on tables (<em>relations</em>), rows (<em>tuples</em>), and columns (<em>attributes</em>).</li>
+                    <li>Example: <code>AGENT</code> and <code>CUSTOMER</code> tables linked via <code>AGENT_CODE</code> (see Fig 2.1).</li>
+                </ul>
+            </li>
+            <li><strong>Entity-Relationship Model (ERM):</strong>
+                <ul>
+                    <li>Visualized using <strong>Chen</strong>, <strong>Crow’s Foot</strong>, or <strong>UML</strong> notations (Fig 2.3).</li>
+                    <li>Example: A 1:M relationship between <em>PAINTER</em> and <em>PAINTING</em>.</li>
+                </ul>
+            </li>
+            <li><strong>Object-Oriented Model (OODM):</strong>
+                <ul>
+                    <li>Combines data and methods (e.g., <em>INVOICE</em> object with attributes and behaviors).</li>
+                    <li>Supports inheritance and class hierarchies.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Emerging Models</h3>
+        <ul>
+            <li><strong>Big Data (3 Vs):</strong>
+                <ul>
+                    <li>Volume (size), Velocity (speed), Variety (data types).</li>
+                    <li>Tools: Hadoop, NoSQL (Cassandra, MongoDB).</li>
+                </ul>
+            </li>
+            <li><strong>NoSQL:</strong> Non-relational, distributed, and scalable for sparse/unstructured data.</li>
+        </ul>
+    </section>
+
+    <!-- Section 5: Data Abstraction Levels -->
+    <section>
+        <h2>5. Levels of Abstraction</h2>
+        <table border="1">
+            <tr>
+                <th>Level</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>External</td>
+                <td>End-user views (e.g., registration system for students).</td>
+                <td>ER diagrams for specific departments.</td>
+            </tr>
+            <tr>
+                <td>Conceptual</td>
+                <td>Global view, hardware/software independent.</td>
+                <td>Unified ER model for the entire organization.</td>
+            </tr>
+            <tr>
+                <td>Internal</td>
+                <td>DBMS-specific implementation (e.g., SQL table definitions).</td>
+                <td><code>CREATE TABLE PROFESSOR (...)</code></td>
+            </tr>
+            <tr>
+                <td>Physical</td>
+                <td>Storage details (e.g., disk blocks, indexes).</td>
+                <td>File structures on a hard drive.</td>
+            </tr>
+        </table>
+        <p><strong>Independence:</strong> Logical (internal changes don’t affect conceptual) and Physical (storage changes don’t affect internal).</p>
+    </section>
+
+    <!-- Section 6: Key Takeaways -->
+    <section>
+        <h2>6. Summary & Exam Tips</h2>
+        <ul>
+            <li>Focus on translating business rules into ER diagrams.</li>
+            <li>Understand differences between hierarchical, relational, and NoSQL models.</li>
+            <li>Memorize the 3 Vs of Big Data and NoSQL characteristics.</li>
+            <li>Practice converting ER models to relational schemas.</li>
+        </ul>
+    </section>
+
+</body>
+</html>
