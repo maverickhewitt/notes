@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chapter 5: Process Synchronization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button onclick="window.location.href='index_os.html'">Back</button>
+    <h1>Chapter 5: Process Synchronization</h1>
+
+    <!-- Section 1: Background -->
+    <section>
+        <h2>1. Background</h2>
+        <ul>
+            <li><strong>Concurrency Issues:</strong> Concurrent access to shared data (e.g., producer-consumer problem) can cause race conditions.</li>
+            <li><strong>Race Condition Example:</strong>
+                <div class="code">
+                    // Producer: counter++ (register1 = counter; register1++; counter = register1)
+                    // Consumer: counter-- (register2 = counter; register2--; counter = register2)
+                </div>
+                <blockquote>Result depends on execution order (e.g., counter = 5 → 6 → 4).</blockquote>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Section 2: Critical-Section Problem -->
+    <section>
+        <h2>2. Critical-Section Problem</h2>
+        <h3>Requirements</h3>
+        <table>
+            <tr><th>Requirement</th><th>Description</th></tr>
+            <tr><td>Mutual Exclusion</td><td>Only one process in critical section (CS) at a time</td></tr>
+            <tr><td>Progress</td><td>No process in CS → select next process without delay</td></tr>
+            <tr><td>Bounded Waiting</td><td>Limit on how long a process waits to enter CS</td></tr>
+        </table>
+
+        <h3>Peterson’s Solution (Software)</h3>
+        <div class="code">
+            // For two processes (i and j):
+            do {
+                flag[i] = true;
+                turn = j;
+                while (flag[j] && turn == j); // Busy wait
+                // Enter CS
+                flag[i] = false;
+            } while (true);
+        </div>
+        <blockquote>Ensures mutual exclusion, progress, and bounded waiting.</blockquote>
+    </section>
+
+    <!-- Section 3: Synchronization Tools -->
+    <section>
+        <h2>3. Synchronization Tools</h2>
+
+        <h3>Mutex Locks</h3>
+        <ul>
+            <li><strong>acquire()</strong> and <strong>release()</strong> must be atomic.</li>
+            <li><span class="highlight">Spinlocks</span>: Busy waiting (no context switch).</li>
+        </ul>
+        <div class="code">
+            acquire() { while (!available); available = false; }
+            release() { available = true; }
+        </div>
+
+        <h3>Semaphores</h3>
+        <table>
+            <tr><th>Type</th><th>Description</th><th>Use Case</th></tr>
+            <tr><td>Binary</td><td>0 or 1 (like Mutex)</td><td>Mutual exclusion</td></tr>
+            <tr><td>Counting</td><td>Unrestricted integer</td><td>Resource counting</td></tr>
+        </table>
+        <div class="code">
+            wait(S) { while (S <= 0); S--; }  // P()
+            signal(S) { S++; }                 // V()
+        </div>
+        <blockquote>Avoid busy waiting via blocking queues (OS-managed).</blockquote>
+
+        <h3>Monitors</h3>
+        <ul>
+            <li>High-level abstraction with condition variables (<code>x.wait()</code>, <code>x.signal()</code>).</li>
+            <li>Only one process active in the monitor at a time.</li>
+        </ul>
+        <div class="code">
+            monitor Example {
+                condition x;
+                void enter() { x.wait(); }
+                void exit() { x.signal(); }
+            }
+        </div>
+    </section>
+
+    <!-- Section 4: Classical Problems -->
+    <section>
+        <h2>4. Classical Synchronization Problems</h2>
+
+        <h3>Bounded-Buffer Problem</h3>
+        <div class="code">
+            // Producer:
+            wait(empty); wait(mutex); /* produce */ signal(mutex); signal(full);
+
+            // Consumer:
+            wait(full); wait(mutex); /* consume */ signal(mutex); signal(empty);
+        </div>
+
+        <h3>Readers-Writers Problem</h3>
+        <ul>
+            <li>Readers: Shared access (no writers).</li>
+            <li>Writers: Exclusive access.</li>
+        </ul>
+        <div class="code">
+            // Writer:
+            wait(rw_mutex); /* write */ signal(rw_mutex);
+
+            // Reader:
+            wait(mutex); read_count++;
+            if (read_count == 1) wait(rw_mutex);
+            signal(mutex); /* read */ 
+            // ... decrement read_count and signal rw_mutex if last reader
+        </div>
+
+        <h3>Dining Philosophers</h3>
+        <blockquote>Deadlock prevention strategies: Limit philosophers, asymmetric pickup.</blockquote>
+        <div class="code">
+            // Monitor solution:
+            test(i) {
+                if (neighbors not eating) state[i] = EATING;
+            }
+        </div>
+    </section>
+
+    <!-- Section 5: OS Implementations -->
+    <section>
+        <h2>5. OS Synchronization Examples</h2>
+        <table>
+            <tr><th>OS</th><th>Mechanisms</th></tr>
+            <tr><td>Solaris</td><td>Adaptive mutexes, readers-writers locks, turnstiles</td></tr>
+            <tr><td>Windows</td><td>Spinlocks, dispatcher objects (events, timers)</td></tr>
+            <tr><td>Linux</td><td>Kernel preemption, semaphores, spinlocks</td></tr>
+            <tr><td>Pthreads</td><td>Mutex locks, condition variables (portable)</td></tr>
+        </table>
+    </section>
+
+    <!-- Section 6: Alternative Approaches -->
+    <section>
+        <h2>6. Alternative Approaches</h2>
+        <ul>
+            <li><strong>Transactional Memory:</strong> Atomic memory operations (commit/rollback).</li>
+            <li><strong>OpenMP:</strong> Compiler directives for critical sections.</li>
+            <li><strong>Functional Programming:</strong> Immutable data (Erlang, Scala).</li>
+        </ul>
+    </section>
+
+</body>
+</html>
