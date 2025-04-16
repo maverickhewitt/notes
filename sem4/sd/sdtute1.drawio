@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" version="26.2.12">
   <diagram name="Page-1" id="skjg_4emkFO80so7AoUh">
-    <mxGraphModel dx="597" dy="347" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="653" dy="380" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -81,6 +81,11 @@
         <mxCell id="g7SPvUek6dbdEDTnpYcu-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="g7SPvUek6dbdEDTnpYcu-25" target="g7SPvUek6dbdEDTnpYcu-27">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="g7SPvUek6dbdEDTnpYcu-39" value="Dentist ID" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="g7SPvUek6dbdEDTnpYcu-29">
+          <mxGeometry x="0.031" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="g7SPvUek6dbdEDTnpYcu-25" value="PATIENT" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
           <mxGeometry x="120" y="460" width="100" height="40" as="geometry" />
         </mxCell>
@@ -120,6 +125,17 @@
         </mxCell>
         <mxCell id="g7SPvUek6dbdEDTnpYcu-34" value="Dentist ID" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="g7SPvUek6dbdEDTnpYcu-32">
           <mxGeometry x="-0.0376" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g7SPvUek6dbdEDTnpYcu-37" value="Dentist Availability" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="260.5" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="g7SPvUek6dbdEDTnpYcu-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.013;entryY=0.872;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="g7SPvUek6dbdEDTnpYcu-28" target="g7SPvUek6dbdEDTnpYcu-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g7SPvUek6dbdEDTnpYcu-40" value="Dentist ID" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="g7SPvUek6dbdEDTnpYcu-38">
+          <mxGeometry x="0.0266" y="1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
