@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Toilet Monitor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    #lcd {
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 20px;
+      width: 320px;
+      height: 60px;
+      margin: 20px auto;
+      padding: 10px;
+      border: 3px solid #0f0;
+      white-space: pre;
+    }
+
+    button {
+      background-color: #0f0;
+      color: #000;
+      border: none;
+      padding: 12px 24px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #00cc00;
+    }
+
+    #status {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🚽 Smart Toilet Monitor</h1>
+
+  <div id="lcd">Connecting...\nPlease wait...</div>
+
+  <button onclick="triggerServo()">Trigger Servo</button>
+
+  <div id="status"></div>
+
+  <script>
+    const esp32IP = "http://192.168.1.100"; // 🔧 Replace with your ESP32 IP
+
+    async function fetchStatus() {
+      try {
+        const res = await fetch(`${esp32IP}/status`);
+        const data = await res.json();
+
+        let stars = "★".repeat(data.stars).padEnd(8, " ");
+        let line1 = data.occupied ? `Occupied ${stars}` : "Available        ";
+        let line2 = `Time: ${data.minutes}m ${data.seconds}s`;
+
+        document.getElementById("lcd").innerText = `${line1}\n${line2}`;
+        document.getElementById("status").innerText = `Last updated: ${new Date().toLocaleTimeString()}`;
+      } catch (err) {
+        document.getElementById("lcd").innerText = "Connection Error\nCheck ESP32 IP";
+        document.getElementById("status").innerText = "";
+      }
+    }
+
+    async function triggerServo() {
+      try {
+        await fetch(`${esp32IP}/servo`, { method: "POST" });
+        document.getElementById("status").innerText = "✅ Servo triggered";
+        fetchStatus();
+      } catch {
+        document.getElementById("status").innerText = "❌ Failed to trigger servo";
+      }
+    }
+
+    // Refresh every 3 seconds
+    setInterval(fetchStatus, 3000);
+    fetchStatus();
+  </script>
+
+</body>
+</html>
